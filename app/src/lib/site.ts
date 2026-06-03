@@ -3,4 +3,4 @@
 // Set NEXT_PUBLIC_SITE_URL on the host to the real production domain.
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://stressreliefclean.com"
-).replaceAll(/\/$/, "");
+).replace(/\/$/, "");
