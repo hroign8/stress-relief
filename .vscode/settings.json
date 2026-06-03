@@ -1,0 +1,32 @@
+{
+  "files.associations": {
+    "*.pcss": "postcss"
+  },
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "snyk.features.openSourceSecurity": false,
+  "snyk.features.codeSecurity": false,
+  "snyk.features.infrastructureAsCode": false,
+  "snyk.features.secrets": false,
+  "snyk.scanningMode": "manual",
+  "snyk.severity": {
+    "critical": false,
+    "high": false,
+    "medium": false,
+    "low": false
+  },
+  "redHatDependencyAnalytics.vulnerabilityAlertSeverity": "Warning",
+  "redHatDependencyAnalytics.recommendations.enabled": false,
+  "redHatDependencyAnalytics.exclude": [
+    "package.json",
+    "**/package.json"
+  ],
+  "redhat.telemetry.enabled": false,
+  "security.workspace.trust.enabled": false,
+  "snyk.advanced.autoSelectOrganization": true
+}

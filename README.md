@@ -31,6 +31,29 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repository is ready to deploy on Vercel as a Next.js app.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Recommended Vercel settings
+
+- Framework preset: **Next.js**
+- Build command: `npm run build`
+- Output directory: `/.next`
+- Root directory: `/`
+
+### Required environment variables
+
+Set these in the Vercel dashboard under your project settings:
+
+- `RESEND_API_KEY` — Resend API key used by the quote form backend.
+- `QUOTE_TO_EMAIL` — Destination email address for quote notifications.
+- `QUOTE_FROM_EMAIL` — Verified sender email address for Resend.
+- `NEXT_PUBLIC_SITE_URL` — Your production site URL, for metadata and sitemap generation.
+
+### Deploy steps
+
+1. Push your code to GitHub, GitLab, or Bitbucket.
+2. Create a new Vercel project and connect the repository.
+3. Configure the environment variables listed above.
+4. Deploy the project.
+
+For more information, see [Vercel’s Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).

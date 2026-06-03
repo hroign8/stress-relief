@@ -1,0 +1,154 @@
+@import "tailwindcss" source(none);
+@source "../../app";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  /* Material 3-style elevation: soft, diffuse, no hard border needed */
+  --shadow-card: 0 1px 2px 0 oklch(0 0 0 / 0.05), 0 4px 12px -2px oklch(0 0 0 / 0.08);
+  --shadow-card-hover: 0 2px 4px 0 oklch(0 0 0 / 0.06), 0 10px 24px -4px oklch(0 0 0 / 0.12);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Cool off-white base — crisp, clean, matches the logo's cool palette */
+  --background: oklch(0.985 0.005 235);
+  --foreground: oklch(0.20 0.035 250);
+  /* Cards are pure white so they float against the cool background */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.035 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.035 250);
+  /* Logo blue primary (#037aa6 / #00559c) — trustworthy, professional */
+  --primary: oklch(0.50 0.13 245);
+  --primary-foreground: oklch(0.98 0.01 235);
+  /* Light blue secondary */
+  --secondary: oklch(0.93 0.03 235);
+  --secondary-foreground: oklch(0.32 0.08 248);
+  /* Soft blue muted tones */
+  --muted: oklch(0.95 0.015 235);
+  --muted-foreground: oklch(0.52 0.04 240);
+  /* Logo teal accent (#30bac6) for fresh, approachable highlights */
+  --accent: oklch(0.92 0.05 205);
+  --accent-foreground: oklch(0.30 0.07 215);
+  --destructive: oklch(0.55 0.18 27);
+  --destructive-foreground: oklch(0.98 0.01 95);
+  --border: oklch(0.88 0.02 235);
+  --input: oklch(0.95 0.012 235);
+  --ring: oklch(0.50 0.13 245);
+  --chart-1: oklch(0.50 0.13 245);
+  --chart-2: oklch(0.72 0.11 204);
+  --chart-3: oklch(0.65 0.115 217);
+  --chart-4: oklch(0.40 0.12 250);
+  --chart-5: oklch(0.60 0.12 230);
+  --sidebar: oklch(0.93 0.03 235);
+  --sidebar-foreground: oklch(0.20 0.035 250);
+  --sidebar-primary: oklch(0.50 0.13 245);
+  --sidebar-primary-foreground: oklch(0.98 0.01 235);
+  --sidebar-accent: oklch(0.88 0.03 215);
+  --sidebar-accent-foreground: oklch(0.20 0.035 250);
+  --sidebar-border: oklch(0.88 0.02 235);
+  --sidebar-ring: oklch(0.50 0.13 245);
+}
+
+
+.dark {
+  --background: oklch(0.16 0.025 250);
+  --foreground: oklch(0.97 0.005 235);
+  --card: oklch(0.20 0.025 250);
+  --card-foreground: oklch(0.97 0.005 235);
+  --popover: oklch(0.20 0.025 250);
+  --popover-foreground: oklch(0.97 0.005 235);
+  --primary: oklch(0.68 0.12 235);
+  --primary-foreground: oklch(0.16 0.025 250);
+  --secondary: oklch(0.27 0.03 248);
+  --secondary-foreground: oklch(0.97 0.005 235);
+  --muted: oklch(0.26 0.025 248);
+  --muted-foreground: oklch(0.68 0.03 235);
+  --accent: oklch(0.30 0.035 215);
+  --accent-foreground: oklch(0.97 0.005 235);
+  --destructive: oklch(0.65 0.18 22);
+  --destructive-foreground: oklch(0.97 0.005 100);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.60 0.10 235);
+  --chart-1: oklch(0.68 0.12 235);
+  --chart-2: oklch(0.72 0.11 204);
+  --chart-3: oklch(0.65 0.115 217);
+  --chart-4: oklch(0.55 0.12 250);
+  --chart-5: oklch(0.60 0.12 230);
+  --sidebar: oklch(0.20 0.025 250);
+  --sidebar-foreground: oklch(0.97 0.005 235);
+  --sidebar-primary: oklch(0.68 0.12 235);
+  --sidebar-primary-foreground: oklch(0.16 0.025 250);
+  --sidebar-accent: oklch(0.27 0.03 248);
+  --sidebar-accent-foreground: oklch(0.97 0.005 235);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.60 0.10 235);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}

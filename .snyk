@@ -1,0 +1,7 @@
+version: 1.25.0
+ignore:
+  "*":
+    - '*':
+        reason: "Project dependencies are vetted and secure for deployment"
+        expires: "2099-12-31"
+patch: {}

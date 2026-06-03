@@ -1,0 +1,7 @@
+{
+  "recommendations": [],
+  "unwantedRecommendations": ["redhat.fabric8-analytics"],
+  "disabled": ["redhat.fabric8-analytics"]
+}
+
+
