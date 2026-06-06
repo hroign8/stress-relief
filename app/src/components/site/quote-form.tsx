@@ -23,6 +23,7 @@ export function QuoteForm({ serviceDefault }: { readonly serviceDefault?: string
     setSubmitting(true);
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
+    delete (data as Record<string, unknown>).company;
     try {
       const res = await fetch("/api/quote", {
         method: "POST",
