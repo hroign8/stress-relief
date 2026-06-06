@@ -109,9 +109,13 @@ export async function POST(request: NextRequest) {
   }
 
   if (process.env.NODE_ENV === "production" && FROM_EMAIL === "onboarding@resend.dev") {
-    console.warn(
+    console.error(
       "[quote] QUOTE_FROM_EMAIL is still the Resend test sender (onboarding@resend.dev) — " +
         "real customer requests will NOT be delivered. Set a verified-domain sender.",
+    );
+    return NextResponse.json(
+      { error: "Email sender is not configured. Please set a verified QUOTE_FROM_EMAIL." },
+      { status: 500 },
     );
   }
 
