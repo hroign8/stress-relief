@@ -88,7 +88,9 @@ export async function POST(request: NextRequest) {
 
   // Honeypot: a hidden `company` field that real users never see or fill.
   // Bots that auto-fill every input get a fake 200 and no email is sent.
+  console.log("[quote] company field:", JSON.stringify(body.company));
   if (nonEmptyString(body.company)) {
+    console.warn("[quote] Honeypot triggered — dropping submission.");
     return NextResponse.json({ success: true }, { status: 200 });
   }
 
